@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://84bcmn32ucre"]
+
+[ext_resource type="Texture2D" uid="uid://c4r3ft1umnft7" path="res://resources/textures/orange_prototype_texture.png" id="1_7wnc2"]
+[ext_resource type="PackedScene" uid="uid://cs7vkhn5vuhey" path="res://scenes/player.tscn" id="2_5uqbp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5uqbp"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_rerym"]
+sky_material = SubResource("ProceduralSkyMaterial_5uqbp")
+
+[sub_resource type="Environment" id="Environment_uijja"]
+background_mode = 2
+sky = SubResource("Sky_rerym")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uqbp"]
+albedo_texture = ExtResource("1_7wnc2")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rerym"]
+albedo_texture = ExtResource("1_7wnc2")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wnc2"]
+albedo_texture = ExtResource("1_7wnc2")
+uv1_triplanar = true
+
+[node name="Level0" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uijja")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+use_collision = true
+radius = 20.0
+height = 6.0
+sides = 16
+material = SubResource("StandardMaterial3D_5uqbp")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+operation = 2
+radius = 18.0
+height = 6.0
+sides = 16
+material = SubResource("StandardMaterial3D_rerym")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 21)
+radius = 15.0
+height = 6.0
+sides = 16
+material = SubResource("StandardMaterial3D_5uqbp")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D/CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+operation = 2
+radius = 13.0
+height = 6.0
+sides = 16
+material = SubResource("StandardMaterial3D_5uqbp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 13.9996, 0.5, 12.2926)
+operation = 2
+size = Vector3(4, 5, 10)
+material = SubResource("StandardMaterial3D_7wnc2")
+
+[node name="Player" parent="." instance=ExtResource("2_5uqbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

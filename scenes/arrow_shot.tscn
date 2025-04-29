@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkje5t8owohgq"]
+
+[ext_resource type="Script" uid="uid://chc4vbls0mk36" path="res://scripts/objects/arrow_shot.gd" id="1_wcv4g"]
+
+[sub_resource type="Curve3D" id="Curve3D_dqkch"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0.5, 0, 0, 1.25, 0, 0, 1.5, 0, 0, 0, 0, 0, 0, -12),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlg0r"]
+albedo_color = Color(0.45, 0.261, 0.126, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dqkch"]
+material = SubResource("StandardMaterial3D_qlg0r")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sm2p5"]
+radius = 0.2
+
+[sub_resource type="Animation" id="Animation_ij5sx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wcv4g"]
+resource_name = "fire"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1u7mx"]
+_data = {
+&"RESET": SubResource("Animation_ij5sx"),
+&"fire": SubResource("Animation_wcv4g")
+}
+
+[node name="ArrowShot" type="Path3D"]
+curve = SubResource("Curve3D_dqkch")
+script = ExtResource("1_wcv4g")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(-4.37098e-08, 1, -4.37098e-08, 0, -4.37114e-08, -0.999964, -0.999964, -4.37114e-08, 1.91062e-15, 0, 1.25, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PathFollow3D"]
+collision_layer = 256
+collision_mask = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dqkch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/StaticBody3D"]
+transform = Transform3D(1, -3.55271e-15, 0, 3.55271e-15, 1, 3.55271e-15, 2.11758e-22, -3.55271e-15, 1, 0, 0, -0.5)
+shape = SubResource("SphereShape3D_sm2p5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1u7mx")
+}
+autoplay = "fire"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
