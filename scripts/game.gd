@@ -1,7 +1,7 @@
 extends Node
 class_name Game
 
-@onready var level_scene: PackedScene = preload("res://scenes/level_0.tscn")
+@onready var level_scene: PackedScene = preload("res://scenes/level_1.tscn")
 
 @onready var game_viewport: SubViewport = $GameView/GameViewport
 

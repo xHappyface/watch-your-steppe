@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5d625kdlmaj8"]
+
+[ext_resource type="PackedScene" uid="uid://cs7vkhn5vuhey" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="Script" uid="uid://shye31ji17p3" path="res://scripts/level.gd" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://gbbjt7p8820c" path="res://scenes/footman.tscn" id="3_rus8k"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkh53"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gkh53"]
+vertices = PackedVector3Array(-19.5, 0.5, -19.5, -19.5, 0.5, 19.5, 19.5, 0.5, 19.5, 19.5, 0.5, -19.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_014kd"]
+size = Vector2(40, 40)
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_bswci")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_gkh53")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_gkh53")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+mesh = SubResource("PlaneMesh_014kd")
+
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_014kd")]
+transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, 0, 0)
+
+[node name="EnemyBody" parent="NavigationRegion3D" instance=ExtResource("3_rus8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)

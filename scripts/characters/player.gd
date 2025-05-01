@@ -48,16 +48,18 @@ func is_dash() -> bool:
 	for conflict in _modifier_conflicts:
 		if modifiers.has(conflict):
 			return false
-	return Input.is_action_just_pressed("dash") and not (dash_cooldown > 0.0) and \
+	if Input.is_action_pressed("hold") or dash_cooldown > 0.0:
+		return false
+	return Input.is_action_just_pressed("dash") and \
 	  anim_tree.get("parameters/move/blend_walk/blend_amount") > 0.0
 
 func is_fire() -> bool:
 	return Input.is_action_just_pressed("fire")
 
 func update_camera() -> void:
-	camera.position = position + Vector3(0.0, 10.0, 4.0)
+	camera.position = position + Vector3(0.0, 8.0, 3.5)
 
-func handle_movement() -> void:
+func handle_controller_movement() -> void:
 	var move_dir: Vector2 = Input.get_vector(
 		"move_left", "move_right",
 		"move_down", "move_up", 0.1
