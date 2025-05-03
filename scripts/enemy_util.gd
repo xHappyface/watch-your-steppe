@@ -10,3 +10,10 @@ static func move_enemy_unit(enemy: Enemy) -> void:
 		enemy.look_at(enemy.global_position + direction)
 	enemy.velocity = direction * enemy.speed
 	enemy.move_and_slide()
+
+static func enemy_unit_lock_on_target(enemy: Enemy) -> void:
+	enemy.nav_agent.target_position = LevelManager.level.player.global_position
+	enemy.look_at(enemy.nav_agent.target_position)
+
+static func damage_enemy(target: Enemy, damage: int) -> void:
+	target.hit_points -= damage

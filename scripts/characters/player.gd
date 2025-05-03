@@ -14,6 +14,7 @@ const BASE_SPEED: float = 4.5
 @export var dash_cooldown: float = 0.0
 var charge: float = 0.0
 var fire_cooldown: float = 0.0
+var hit_points: int = 1
 
 var modifiers: Dictionary[StringName, bool] = {}
 # Dictionary[StringName, Array[StringName]]
@@ -97,7 +98,7 @@ func handle_fire(delta: float) -> void:
 	fire_cooldown = 0.2
 	_set_modifier(&"charge", false)
 	var arrow_shot: ArrowShot = arrow_shot_scene.instantiate()
-	arrow_shot.curve.set("point_1/position", Vector3(0.0, 0.0, -(2.0 + (charge * 10.0))))
+	arrow_shot.curve.set("point_1/position", Vector3(0.0, 0.0, -(2.0 + (charge * 14.0))))
 	charge = 0.0
 	LevelManager.level.add_child(arrow_shot)
 	arrow_shot.global_position = global_position

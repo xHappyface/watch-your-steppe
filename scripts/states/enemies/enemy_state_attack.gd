@@ -1,6 +1,6 @@
 extends State
-class_name EnemyStateChase
+class_name EnemyStateAttack
 
 func update(enemy: Node, delta: float) -> void:
 	if enemy is Enemy:
-		EnemyUtil.move_enemy_unit(enemy)
+		EnemyUtil.enemy_unit_lock_on_target(enemy)

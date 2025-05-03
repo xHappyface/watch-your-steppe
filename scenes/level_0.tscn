@@ -75,7 +75,5 @@ size = Vector3(4, 5, 10)
 material = SubResource("StandardMaterial3D_7wnc2")
 
 [node name="Player" parent="." instance=ExtResource("2_5uqbp")]
-speed = 4.5
-dash_cooldown = 0.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
