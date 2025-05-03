@@ -67,15 +67,15 @@ script = ExtResource("1_wcv4g")
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(-4.37098e-08, 1, -4.37098e-08, 0, -4.37114e-08, -0.999964, -0.999964, -4.37114e-08, 1.91062e-15, 0, 1.25, 0)
 
-[node name="StaticBody3D" type="Area3D" parent="PathFollow3D"]
+[node name="Area3D" type="Area3D" parent="PathFollow3D"]
 collision_layer = 256
 collision_mask = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PathFollow3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CylinderMesh_dqkch")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/Area3D"]
 transform = Transform3D(1, -3.55271e-15, 0, 3.55271e-15, 1, 3.55271e-15, 2.11758e-22, -3.55271e-15, 1, 0, 0, -0.5)
 shape = SubResource("SphereShape3D_sm2p5")
 
@@ -90,5 +90,5 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
-[connection signal="body_entered" from="PathFollow3D/StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="body_entered" from="PathFollow3D/Area3D" to="." method="_on_static_body_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -98,6 +98,8 @@ func handle_fire(delta: float) -> void:
 	fire_cooldown = 0.2
 	_set_modifier(&"charge", false)
 	var arrow_shot: ArrowShot = arrow_shot_scene.instantiate()
+	if charge >= 1.0:
+		arrow_shot.pierce = 2
 	arrow_shot.curve.set("point_1/position", Vector3(0.0, 0.0, -(2.0 + (charge * 14.0))))
 	charge = 0.0
 	LevelManager.level.add_child(arrow_shot)

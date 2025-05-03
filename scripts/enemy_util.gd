@@ -13,7 +13,8 @@ static func move_enemy_unit(enemy: Enemy) -> void:
 
 static func enemy_unit_lock_on_target(enemy: Enemy) -> void:
 	enemy.nav_agent.target_position = LevelManager.level.player.global_position
-	enemy.look_at(enemy.nav_agent.target_position)
+	if not enemy.modifiers.has(&"attack"):
+		enemy.look_at(enemy.nav_agent.target_position)
 
 static func damage_enemy(target: Enemy, damage: int) -> void:
 	target.hit_points -= damage
