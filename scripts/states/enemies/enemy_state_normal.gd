@@ -2,5 +2,5 @@ extends State
 class_name EnemyStateNormal
 
 func update(enemy: Node, delta: float) -> void:
-	if enemy is Enemy:
-		EnemyUtil.move_enemy_unit(enemy)
+	if enemy.is_in_group("enemy"):
+		EnemyUtil.move_enemy_unit(enemy, delta)

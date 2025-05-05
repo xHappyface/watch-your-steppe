@@ -770,14 +770,14 @@ states/idle/position = Vector2(355, 100)
 states/walk/node = SubResource("AnimationNodeAnimation_w3mjf")
 states/walk/position = Vector2(503, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6j2ja"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ebj8v"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ne2u5"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_dqsw6"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_ahi0g"), "idle", "aim", SubResource("AnimationNodeStateMachineTransition_r0esa"), "walk", "aim", SubResource("AnimationNodeStateMachineTransition_8io05"), "aim", "attack", SubResource("AnimationNodeStateMachineTransition_yfy57"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_e2mwc"), "attack", "death", SubResource("AnimationNodeStateMachineTransition_r11kl"), "aim", "death", SubResource("AnimationNodeStateMachineTransition_2vf6m"), "attack", "aim", SubResource("AnimationNodeStateMachineTransition_76nxu")]
-graph_offset = Vector2(66, -76)
+graph_offset = Vector2(15, -70)
 
 [sub_resource type="Animation" id="Animation_trgcn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman:position")
+tracks/0/path = NodePath("../Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -789,7 +789,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Footman/Spear:position")
+tracks/1/path = NodePath("../Mesh/Spear:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -801,7 +801,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Footman/Spear:rotation")
+tracks/2/path = NodePath("../Mesh/Spear:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -818,7 +818,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman:position")
+tracks/0/path = NodePath("../Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -830,7 +830,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Footman/Spear:position")
+tracks/1/path = NodePath("../Mesh/Spear:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -842,7 +842,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Footman/Spear:rotation")
+tracks/2/path = NodePath("../Mesh/Spear:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -868,16 +868,16 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_8io05"]
 resource_name = "attack"
-length = 0.65
+length = 0.8
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman/Spear:position")
+tracks/0/path = NodePath("../Mesh/Spear:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.65),
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 3.5, 3), Vector3(0, 3.5, 3), Vector3(0, 3.5, -4), Vector3(0, 3.5, 0)]
@@ -885,11 +885,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Footman/Spear:rotation")
+tracks/1/path = NodePath("../Mesh/Spear:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0, 0)]
@@ -901,7 +901,7 @@ tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.65),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"attack", true],
@@ -909,6 +909,20 @@ tracks/2/keys = {
 }, {
 "args": [&"attack", false],
 "method": &"_set_modifier"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_handle_attack"
 }]
 }
 
@@ -919,7 +933,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman:position")
+tracks/0/path = NodePath("../Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -951,7 +965,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman:position")
+tracks/0/path = NodePath("../Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -969,7 +983,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Footman:position")
+tracks/0/path = NodePath("../Mesh:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1107,7 +1121,7 @@ _data = {
 &"dead": SubResource("Animation_w3mjf")
 }
 
-[node name="EnemyBody" type="CharacterBody3D"]
+[node name="Footman" type="RigidBody3D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 7
 axis_lock_linear_y = true
@@ -1118,113 +1132,113 @@ script = ExtResource("1_2tnhf")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
 
-[node name="Footman" type="Node3D" parent="."]
+[node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
-[node name="LegR" type="Node3D" parent="Footman"]
+[node name="LegR" type="Node3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4375, 1.375, 0)
 
-[node name="ThighR" type="MeshInstance3D" parent="Footman/LegR"]
+[node name="ThighR" type="MeshInstance3D" parent="Mesh/LegR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0.5, 0)
 mesh = SubResource("ArrayMesh_fu3gj")
 skeleton = NodePath("")
 
-[node name="ShinR" type="MeshInstance3D" parent="Footman/LegR"]
+[node name="ShinR" type="MeshInstance3D" parent="Mesh/LegR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, -0.625, -0.0625)
 mesh = SubResource("ArrayMesh_fi4h3")
 skeleton = NodePath("")
 
-[node name="FootR" type="MeshInstance3D" parent="Footman/LegR"]
+[node name="FootR" type="MeshInstance3D" parent="Mesh/LegR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046875, -1.375, -0.1875)
 mesh = SubResource("ArrayMesh_uf83e")
 skeleton = NodePath("")
 
-[node name="LegL2" type="Node3D" parent="Footman"]
+[node name="LegL2" type="Node3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4375, 1.375, 0)
 
-[node name="ThighL" type="MeshInstance3D" parent="Footman/LegL2"]
+[node name="ThighL" type="MeshInstance3D" parent="Mesh/LegL2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, 0.5, 0)
 mesh = SubResource("ArrayMesh_7cior")
 skeleton = NodePath("")
 
-[node name="ShinL" type="MeshInstance3D" parent="Footman/LegL2"]
+[node name="ShinL" type="MeshInstance3D" parent="Mesh/LegL2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0625, -0.625, -0.0625)
 mesh = SubResource("ArrayMesh_w8cih")
 skeleton = NodePath("")
 
-[node name="FootL" type="MeshInstance3D" parent="Footman/LegL2"]
+[node name="FootL" type="MeshInstance3D" parent="Mesh/LegL2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046875, -1.375, -0.1875)
 mesh = SubResource("ArrayMesh_vwhlb")
 skeleton = NodePath("")
 
-[node name="ArmL" type="Node3D" parent="Footman"]
+[node name="ArmL" type="Node3D" parent="Mesh"]
 transform = Transform3D(0.92388, 0.382683, 0, -0.382683, 0.92388, 0, 0, 0, 1, -0.75, 3.58125, 0.0625)
 
-[node name="HandL" type="MeshInstance3D" parent="Footman/ArmL"]
+[node name="HandL" type="MeshInstance3D" parent="Mesh/ArmL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83125, -0.0625)
 mesh = SubResource("ArrayMesh_hg2dr")
 skeleton = NodePath("")
 
-[node name="BicepL" type="MeshInstance3D" parent="Footman/ArmL"]
+[node name="BicepL" type="MeshInstance3D" parent="Mesh/ArmL"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_257b0")
 skeleton = NodePath("")
 
-[node name="ForearmL" type="MeshInstance3D" parent="Footman/ArmL"]
+[node name="ForearmL" type="MeshInstance3D" parent="Mesh/ArmL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015625, -1.01875, -0.03125)
 mesh = SubResource("ArrayMesh_xets3")
 skeleton = NodePath("")
 
-[node name="ArmR" type="Node3D" parent="Footman"]
+[node name="ArmR" type="Node3D" parent="Mesh"]
 transform = Transform3D(0.92388, -0.382683, 0, 0.382683, 0.92388, 0, 0, 0, 1, 0.75, 3.58125, 0.0625)
 
-[node name="BicepR" type="MeshInstance3D" parent="Footman/ArmR"]
+[node name="BicepR" type="MeshInstance3D" parent="Mesh/ArmR"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_23yj4")
 skeleton = NodePath("")
 
-[node name="ForearmR" type="MeshInstance3D" parent="Footman/ArmR"]
+[node name="ForearmR" type="MeshInstance3D" parent="Mesh/ArmR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015625, -1.01875, -0.03125)
 mesh = SubResource("ArrayMesh_7wlhh")
 skeleton = NodePath("")
 
-[node name="HandR" type="MeshInstance3D" parent="Footman/ArmR"]
+[node name="HandR" type="MeshInstance3D" parent="Mesh/ArmR"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.83125, -0.0625)
 mesh = SubResource("ArrayMesh_oa7wp")
 skeleton = NodePath("")
 
-[node name="Torso" type="Node3D" parent="Footman"]
+[node name="Torso" type="Node3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.125, 0)
 
-[node name="Torso_1" type="MeshInstance3D" parent="Footman/Torso"]
+[node name="Torso_1" type="MeshInstance3D" parent="Mesh/Torso"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9375, 0)
 mesh = SubResource("ArrayMesh_k6vi1")
 skeleton = NodePath("")
 
-[node name="Tasset" type="MeshInstance3D" parent="Footman/Torso"]
+[node name="Tasset" type="MeshInstance3D" parent="Mesh/Torso"]
 mesh = SubResource("ArrayMesh_7dau1")
 skeleton = NodePath("")
 
-[node name="Head" type="Node3D" parent="Footman"]
+[node name="Head" type="Node3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3125, 0.0625)
 
-[node name="Helmet" type="MeshInstance3D" parent="Footman/Head"]
+[node name="Helmet" type="MeshInstance3D" parent="Mesh/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
 mesh = SubResource("ArrayMesh_gka1n")
 skeleton = NodePath("")
 
-[node name="Head_1" type="MeshInstance3D" parent="Footman/Head"]
+[node name="Head_1" type="MeshInstance3D" parent="Mesh/Head"]
 mesh = SubResource("ArrayMesh_ycnh3")
 skeleton = NodePath("")
 
-[node name="Spear" type="Node3D" parent="Footman"]
+[node name="Spear" type="Node3D" parent="Mesh"]
 
-[node name="Shaft" type="MeshInstance3D" parent="Footman/Spear"]
+[node name="Shaft" type="MeshInstance3D" parent="Mesh/Spear"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875, 2.1875, -1.375)
 mesh = SubResource("ArrayMesh_ln4l6")
 skeleton = NodePath("")
 
-[node name="Spearhead" type="MeshInstance3D" parent="Footman/Spear"]
+[node name="Spearhead" type="MeshInstance3D" parent="Mesh/Spear"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875, 5.375, -1.375)
 mesh = SubResource("ArrayMesh_j243t")
 skeleton = NodePath("")
@@ -1241,16 +1255,17 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_ufmc2")
 
-[node name="Area3D2" type="Area3D" parent="."]
+[node name="Attack" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attack"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.35, 1, -2)
 shape = SubResource("CylinderShape3D_4x1wb")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
+callback_mode_process = 0
 tree_root = SubResource("AnimationNodeStateMachine_trgcn")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("AnimationPlayer")
@@ -1262,6 +1277,7 @@ libraries = {
 
 [node name="StateManager" type="AnimationTree" parent="."]
 root_node = NodePath(".")
+callback_mode_process = 0
 tree_root = SubResource("AnimationNodeStateMachine_yqmta")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("States")

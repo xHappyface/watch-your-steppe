@@ -60,6 +60,9 @@ func is_fire() -> bool:
 func update_camera() -> void:
 	camera.position = position + Vector3(0.0, 8.0, 3.5)
 
+func handle_damage(damage: int) -> void:
+	hit_points = max(hit_points - damage, 0.0)
+
 func handle_controller_movement() -> void:
 	var move_dir: Vector2 = Input.get_vector(
 		"move_left", "move_right",

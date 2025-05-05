@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cs7vkhn5vuhey" path="res://scenes/player.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://shye31ji17p3" path="res://scripts/level.gd" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://gbbjt7p8820c" path="res://scenes/footman.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://bo01t0p1nn0it" path="res://scenes/portal.tscn" id="4_5xbjy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkh53"]
 
@@ -50,8 +50,17 @@ shape = SubResource("BoxShape3D_5xbjy")
 [node name="Player" parent="Ground/NavigationRegion3D" instance=ExtResource("1_014kd")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, 0, 0)
 
-[node name="EnemyBody" parent="Ground/NavigationRegion3D" instance=ExtResource("3_rus8k")]
+[node name="Portals" type="Node" parent="."]
+
+[node name="Portal" parent="Portals" instance=ExtResource("4_5xbjy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
 
-[node name="EnemyBody2" parent="Ground/NavigationRegion3D" instance=ExtResource("3_rus8k")]
+[node name="Portal2" parent="Portals" instance=ExtResource("4_5xbjy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

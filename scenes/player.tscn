@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://cs7vkhn5vuhey"]
+[gd_scene load_steps=43 format=3 uid="uid://cs7vkhn5vuhey"]
 
 [ext_resource type="Script" uid="uid://rgmx6a7g4mpp" path="res://scripts/characters/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" path="res://scripts/states/state_manager.gd" id="2_g2els"]
 [ext_resource type="Script" uid="uid://jqc6uus3v4ss" path="res://scripts/states/player/player_state_normal.gd" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://422eqx7o3ugn" path="res://assets/models/nomolun.fbx" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://t0c6cwat62o6" path="res://scripts/states/player/player_state_dead.gd" id="5_qlg0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8vuu"]
 albedo_color = Color(0, 1, 0.490196, 1)
@@ -19,12 +20,15 @@ radius = 0.4
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_smehm"]
 animation = &"dash"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qlg0r"]
+animation = &"death"
+
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_qhqgy"]
 mix_mode = 1
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qlg0r"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dqkch"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y4r1p"]
 animation = &"charge"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fjrip"]
@@ -34,13 +38,13 @@ animation = &"idle"
 animation = &"walk"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y4r1p"]
-graph_offset = Vector2(-233.991, 156.068)
+graph_offset = Vector2(-210.206, 107.299)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_qhqgy")
 nodes/OneShot/position = Vector2(340, 120)
 nodes/blend_walk/node = SubResource("AnimationNodeBlend2_qlg0r")
 nodes/blend_walk/position = Vector2(100, 100)
-nodes/charge/node = SubResource("AnimationNodeAnimation_dqkch")
-nodes/charge/position = Vector2(153.014, 438.169)
+nodes/charge/node = SubResource("AnimationNodeAnimation_y4r1p")
+nodes/charge/position = Vector2(140, 420)
 nodes/idle/node = SubResource("AnimationNodeAnimation_fjrip")
 nodes/idle/position = Vector2(-100, 60)
 nodes/output/position = Vector2(580, 220)
@@ -59,13 +63,19 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dqkch"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tuyoq"]
+advance_mode = 2
+advance_expression = "not (hit_points > 0)"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dqkch"]
 states/dash/node = SubResource("AnimationNodeAnimation_smehm")
 states/dash/position = Vector2(445, -37)
+states/death/node = SubResource("AnimationNodeAnimation_qlg0r")
+states/death/position = Vector2(445, 234)
 states/move/node = SubResource("AnimationNodeBlendTree_y4r1p")
 states/move/position = Vector2(445, 100)
-transitions = ["move", "dash", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "Start", "move", SubResource("AnimationNodeStateMachineTransition_dqkch")]
-graph_offset = Vector2(87, -74)
+transitions = ["move", "dash", SubResource("AnimationNodeStateMachineTransition_d2wvv"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_3v2ag"), "Start", "move", SubResource("AnimationNodeStateMachineTransition_dqkch"), "move", "death", SubResource("AnimationNodeStateMachineTransition_tuyoq")]
+graph_offset = Vector2(73, -11)
 
 [sub_resource type="Animation" id="Animation_fjrip"]
 length = 0.001
@@ -164,6 +174,30 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 0, 0, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Nomolun:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../CollisionShape3D:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
@@ -305,6 +339,18 @@ tracks/6/keys = {
 "method": &"_set_modifier"
 }]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CollisionShape3D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_qlg0r"]
 resource_name = "idle"
@@ -425,14 +471,49 @@ tracks/3/keys = {
 "values": [Vector3(0, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_tuyoq"]
+resource_name = "death"
+length = 1.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Nomolun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -2, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"velocity", Vector2(0, 0)],
+"method": &"set"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuyoq"]
 _data = {
 &"RESET": SubResource("Animation_fjrip"),
 &"charge": SubResource("Animation_ur7pv"),
 &"dash": SubResource("Animation_smehm"),
+&"death": SubResource("Animation_tuyoq"),
 &"idle": SubResource("Animation_qlg0r"),
 &"walk": SubResource("Animation_y4r1p")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tuyoq"]
+animation = &"dead"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhqgy"]
 animation = &"normal"
@@ -440,12 +521,18 @@ animation = &"normal"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qlg0r"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjrip"]
+advance_mode = 2
+advance_expression = "not (hit_points > 0)"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qhqgy"]
 states/Start/position = Vector2(288, 100)
+states/dead/node = SubResource("AnimationNodeAnimation_tuyoq")
+states/dead/position = Vector2(604, 100)
 states/normal/node = SubResource("AnimationNodeAnimation_qhqgy")
 states/normal/position = Vector2(459, 100)
-transitions = ["Start", "normal", SubResource("AnimationNodeStateMachineTransition_qlg0r")]
-graph_offset = Vector2(-26, -29)
+transitions = ["Start", "normal", SubResource("AnimationNodeStateMachineTransition_qlg0r"), "normal", "dead", SubResource("AnimationNodeStateMachineTransition_fjrip")]
+graph_offset = Vector2(62, -53)
 
 [sub_resource type="Resource" id="Resource_dqkch"]
 script = ExtResource("4_dqkch")
@@ -474,13 +561,37 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Resource" id="Resource_tuyoq"]
+script = ExtResource("5_qlg0r")
+metadata/_custom_type_script = "uid://t0c6cwat62o6"
+
+[sub_resource type="Animation" id="Animation_d2wvv"]
+resource_name = "dead"
+length = 0.001
+step = 0.001
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [SubResource("Resource_tuyoq")],
+"method": &"_set_state"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlg0r"]
 _data = {
+&"dead": SubResource("Animation_d2wvv"),
 &"normal": SubResource("Animation_dqkch")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
-albedo_color = Color(0, 0.490196, 1, 1)
+albedo_color = Color(-0.00833333, 0.494281, 1.00833, 1)
 disable_receive_shadows = true
 
 [sub_resource type="PrismMesh" id="PrismMesh_qlg0r"]
@@ -523,7 +634,7 @@ anim_player = NodePath("AnimationPlayer")
 parameters/move/OneShot/active = false
 parameters/move/OneShot/internal_active = false
 parameters/move/OneShot/request = 0
-parameters/move/blend_walk/blend_amount = 0.0
+parameters/move/blend_walk/blend_amount = -0.00833333
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
 callback_mode_process = 0

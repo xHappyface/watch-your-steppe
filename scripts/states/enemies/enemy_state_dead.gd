@@ -1,5 +1,6 @@
 extends State
 class_name EnemyStateDead
 
-func update(enemy: Node, delta: float) -> void:
+func update(_enemy: Node, _delta: float) -> void:
+	print("dead")
 	pass

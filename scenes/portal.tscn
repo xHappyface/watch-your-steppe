@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo01t0p1nn0it"]
+
+[ext_resource type="Script" uid="uid://cdtcr8i3mwlq5" path="res://scripts/objects/portal.gd" id="1_1ffj6"]
+[ext_resource type="Shader" uid="uid://cvxphiwqqlpnk" path="res://resources/shaders/portal.tres" id="1_v0xau"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ffj6"]
+render_priority = 0
+shader = ExtResource("1_v0xau")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jr6l0"]
+material = SubResource("ShaderMaterial_1ffj6")
+size = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_1ffj6"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawned:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jr6l0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spawned:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d4jfq"]
+_data = {
+&"RESET": SubResource("Animation_jr6l0"),
+&"spawn": SubResource("Animation_1ffj6")
+}
+
+[node name="Portal" type="Node3D"]
+script = ExtResource("1_1ffj6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("PlaneMesh_jr6l0")
+
+[node name="Spawned" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d4jfq")
+}
