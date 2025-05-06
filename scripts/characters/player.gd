@@ -100,6 +100,8 @@ func handle_fire(delta: float) -> void:
 	charge = clamp(charge, 0.0, 1.0)
 	fire_cooldown = 0.2
 	_set_modifier(&"charge", false)
+	if modifiers.has(&"dash"):
+		return
 	var arrow_shot: ArrowShot = arrow_shot_scene.instantiate()
 	if charge >= 1.0:
 		arrow_shot.pierce = 2

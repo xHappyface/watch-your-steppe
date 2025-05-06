@@ -38,13 +38,13 @@ animation = &"idle"
 animation = &"walk"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y4r1p"]
-graph_offset = Vector2(-210.206, 107.299)
+graph_offset = Vector2(-218.206, 77.2991)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_qhqgy")
 nodes/OneShot/position = Vector2(340, 120)
 nodes/blend_walk/node = SubResource("AnimationNodeBlend2_qlg0r")
 nodes/blend_walk/position = Vector2(100, 100)
 nodes/charge/node = SubResource("AnimationNodeAnimation_y4r1p")
-nodes/charge/position = Vector2(140, 420)
+nodes/charge/position = Vector2(180, 400)
 nodes/idle/node = SubResource("AnimationNodeAnimation_fjrip")
 nodes/idle/position = Vector2(-100, 60)
 nodes/output/position = Vector2(580, 220)
