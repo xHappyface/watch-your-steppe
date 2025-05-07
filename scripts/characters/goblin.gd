@@ -1,12 +1,12 @@
 extends RigidBody3D
-class_name Footman
+class_name Goblin
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var reach: Area3D = $Reach
-@onready var attack: Area3D = $Attack
+#@onready var attack: Area3D = $Attack
 @onready var state_manager: StateManager = $StateManager
 
-var speed: float = 3.0
+var speed: float = 3.5
 var hit_points: int = 1
 
 var modifiers: Dictionary[StringName, bool] = {}
@@ -53,9 +53,3 @@ func _on_reach_body_exited(body: Node3D) -> void:
 	if body is Player:
 		_set_modifier(&"aim", false)
 		#_set_modifier(&"attack", false)
-
-func _handle_attack() -> void:
-	var bodies: Array[Node3D] = attack.get_overlapping_bodies()
-	for body in bodies:
-		if body is Player:
-			body.handle_damage(1)

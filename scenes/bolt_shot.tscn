@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=4 uid="uid://bygfq7v61frtt"]
+
+[ext_resource type="Texture2D" uid="uid://42ausu5iq33y" path="res://assets/models/crossbowman_9.png" id="1_narho"]
+[ext_resource type="Script" uid="uid://cjuxyxsnqkqsp" path="res://scripts/objects/bolt_shot.gd" id="1_ugvxh"]
+
+[sub_resource type="Curve3D" id="Curve3D_0xkyl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0.5, 0, 0, 1.25, 0, 0, 1.5, 0, 0, 0, 0, 0, 0, -12),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7m5ku"]
+resource_name = "crossbow_texture.png"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_narho")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_53e8x"]
+_surfaces = [{
+"aabb": AABB(-0.030475, -0.375, -0.015625, 0.06095, 1.25, 0.03125),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgADAAQABAAFAAIAAAACAAUABgAEAAMAAQAHAAMABgADAAcABwABAAgAAAAIAAEABgAHAAkACAAJAAcABgAKAAQABQAEAAoABgAJAAsABgALAAoACQAIAAwAAAAMAAgADAALAAkAAAAFAA0AAAANAAwACgANAAUACwAMAA0ADQAKAAsA"),
+"name": "crossbow_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("AAAAAAAAwL4AAAAAtaZ5PAAAwL4AAIA8tab5PAAAwL4AAAAAtab5PAAAYD8AAAAAtaZ5PAAAYD8AAIC8taZ5PAAAwL4AAIC8AAAAAAAAYD8AAAAAtaZ5PAAAYD8AAIA8taZ5vAAAwL4AAIA8taZ5vAAAYD8AAIA8taZ5vAAAYD8AAIC8tab5vAAAYD8AAAAAtab5vAAAwL4AAAAAtaZ5vAAAwL4AAIC8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_shk2q"]
+resource_name = "Shaft"
+_surfaces = [{
+"aabb": AABB(-0.030475, -0.375, -0.015625, 0.06095, 1.25, 0.03125),
+"attribute_data": PackedByteArray("AACUPgAAgDtN85U+AAAAAJvmlz4AAIA7swySPgAAAABN85U+AAAAPGUZkD4AAIA7swySPgAAADwAAAw/AACIPgAADD8AABQ/AAAIPwAAFD8AAAg/AACIPgAAADwAAOo+W9N8PAAA6j6taT48AADsPq1pPjwAAOg+pSyDOwAA7D6lLIM7AADoPl8pSzkAAOo+AADoPgAAiD4AAOg+AAAUPwAA4D4AABQ/AADgPgAAiD4AAAw/AACIPgAADD8AABQ/AAAIPwAAFD8AAAg/AACIPgAABD8AAIg+AAAEPwAAFD8AAAA/AAAUPwAAAD8AAIg+AAD4PgAAiD4AAPg+AAAUPwAA8D4AABQ/AADwPgAAiD4AANg+AACIPgAA2D4AABQ/AADQPgAAFD8AANA+AACIPg=="),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMAAAAEAAYAAAAGAAUABwAIAAkACQAKAAcACwAMAA0ACwAOAAwACwANAA8ACwAQAA4ACwAPABEACwARABAAEgATABQAFAAVABIAFgAXABgAGAAZABYAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIA"),
+"material": SubResource("StandardMaterial3D_7m5ku"),
+"name": "crossbow_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("AAAAAAAAwL4AAAAAtaZ5PAAAwL4AAIA8tab5PAAAwL4AAAAAtaZ5vAAAwL4AAIA8taZ5PAAAwL4AAIC8tab5vAAAwL4AAAAAtaZ5vAAAwL4AAIC8tab5PAAAYD8AAAAAtab5PAAAwL4AAAAAtaZ5PAAAwL4AAIA8taZ5PAAAYD8AAIA8AAAAAAAAYD8AAAAAtab5PAAAYD8AAAAAtaZ5PAAAYD8AAIA8taZ5PAAAYD8AAIC8taZ5vAAAYD8AAIA8taZ5vAAAYD8AAIC8tab5vAAAYD8AAAAAtaZ5PAAAYD8AAIC8taZ5PAAAwL4AAIC8tab5PAAAwL4AAAAAtab5PAAAYD8AAAAAtaZ5vAAAYD8AAIC8taZ5vAAAwL4AAIC8taZ5PAAAwL4AAIC8taZ5PAAAYD8AAIC8tab5vAAAYD8AAAAAtab5vAAAwL4AAAAAtaZ5vAAAwL4AAIC8taZ5vAAAYD8AAIC8taZ5vAAAYD8AAIA8taZ5vAAAwL4AAIA8tab5vAAAwL4AAAAAtab5vAAAYD8AAAAAtaZ5PAAAYD8AAIA8taZ5PAAAwL4AAIA8taZ5vAAAwL4AAIA8taZ5vAAAYD8AAIA8/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7/MwP9///9l4MzA/3///2XgzMD/f///ZeDMwP9///9l4P9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/9///////+///8xvwAAZeD//zG/AABl4P//Mb8AAGXg//8xvwAAZeD/////AAD/v/////8AAP+//////wAA/7//////AAD/vwAAMb/NQP+/AAAxv81A/78AADG/zUD/vwAAMb/NQP+/Mj//fzG//78yP/9/Mb//vzI//38xv/+/Mj//fzG//7//f/9/////v/9//3////+//3//f////7//f/9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_53e8x")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_85ndc"]
+_surfaces = [{
+"aabb": AABB(-0.0625, -0.125, -0.0625, 0.125, 0.375, 0.125),
+"format": 34359742465,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwABAAAAAgAEAAAAAwAAAAQAAwAEAAIA"),
+"name": "crossbow_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("AACAvQAAAL4AAIA9AACAPQAAAL4AAIA9AACAPQAAAL4AAIC9AAAAAAAAgD4AAAAAAACAvQAAAL4AAIC9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8mifc"]
+resource_name = "Arrowhead"
+_surfaces = [{
+"aabb": AABB(-0.0625, -0.125, -0.0625, 0.125, 0.375, 0.125),
+"attribute_data": PackedByteArray("AAAAAAAA0D4AAAA9AADQPgAAAD0AAOA+AAAAAAAA4D5v8hc/AADYPm/yFz9mqAQ/kQ0QPyxcAz/d5Ic+AABQPt3khz7MUJk+RjZwPli4lj7d5Ic+AACoPt3khz7MUNk+RjZwPli41j5v8hM/AAAQP2/yEz9mqCg/kQ0MPyxcJz8="),
+"format": 34359742487,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABwAIAAkACgALAAwADQAOAA8A"),
+"material": SubResource("StandardMaterial3D_7m5ku"),
+"name": "crossbow_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AACAvQAAAL4AAIA9AACAPQAAAL4AAIA9AACAPQAAAL4AAIC9AACAvQAAAL4AAIC9AAAAAAAAgD4AAAAAAACAPQAAAL4AAIC9AACAPQAAAL4AAIA9AAAAAAAAgD4AAAAAAACAPQAAAL4AAIA9AACAvQAAAL4AAIA9AAAAAAAAgD4AAAAAAACAvQAAAL4AAIC9AACAPQAAAL4AAIC9AAAAAAAAgD4AAAAAAACAvQAAAL4AAIA9AACAvQAAAL4AAIC9/38AAP///7//fwAA////v/9/AAD///+//38AAP///7+17UiSdBGK/rXtSJJ0EYr+te1IknQRiv7/f0iSiu4tyv9/SJKK7i3K/39IkoruLcq17f//XBS5yLXt//9cFLnIte3//1wUuchJEkiS6IK5yEkSSJLogrnISRJIkuiCucg=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_85ndc")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_narho"]
+radius = 0.167
+
+[sub_resource type="Animation" id="Animation_narho"]
+resource_name = "fire"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ugvxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixnm5"]
+_data = {
+&"RESET": SubResource("Animation_ugvxh"),
+&"fire": SubResource("Animation_narho")
+}
+
+[node name="BoltShot" type="Path3D"]
+curve = SubResource("Curve3D_0xkyl")
+script = ExtResource("1_ugvxh")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(-4.37105e-08, 1, 4.37105e-08, 0, -4.37114e-08, 0.999979, 0.999979, 4.37114e-08, 1.91065e-15, 0, 0, -12)
+progress = 12.365
+
+[node name="Area3D" type="Area3D" parent="PathFollow3D"]
+collision_layer = 256
+collision_mask = 2
+
+[node name="Bolt" type="Node3D" parent="PathFollow3D/Area3D"]
+transform = Transform3D(0.6, 2.62268e-08, 0, 1.77636e-15, -2.62268e-08, 0.6, 2.62268e-08, -0.6, -2.62268e-08, 0, 0, -0.3)
+
+[node name="Shaft" type="MeshInstance3D" parent="PathFollow3D/Area3D/Bolt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("ArrayMesh_shk2q")
+skeleton = NodePath("")
+
+[node name="Arrowhead" type="MeshInstance3D" parent="PathFollow3D/Area3D/Bolt"]
+mesh = SubResource("ArrayMesh_8mifc")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathFollow3D/Area3D"]
+transform = Transform3D(1, -3.55271e-15, 2.11758e-22, 3.55271e-15, 1, 3.55271e-15, 2.11758e-22, -3.55271e-15, 1, 0, 0, -0.325)
+shape = SubResource("SphereShape3D_narho")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_ixnm5")
+}
+autoplay = "fire"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="PathFollow3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

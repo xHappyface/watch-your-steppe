@@ -9,6 +9,8 @@ func spawn(enemy_type: EnemyUtil.EnemyType) -> void:
 	match enemy_type:
 		EnemyUtil.EnemyType.CROSSBOWMAN:
 			enemy = LevelManager.crossbowman_scene.instantiate()
+		EnemyUtil.EnemyType.GOBLIN:
+			enemy = LevelManager.goblin_scene.instantiate()
 		_:
 			enemy = LevelManager.footman_scene.instantiate()
 	enemy.position = Vector3(0.0, 0.05, 0.0)

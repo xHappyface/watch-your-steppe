@@ -829,11 +829,11 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ebj8v"]
 advance_mode = 2
-advance_expression = "not velocity.is_zero_approx()"
+advance_expression = "not linear_velocity.is_zero_approx()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ne2u5"]
 advance_mode = 2
-advance_expression = "velocity.is_zero_approx()"
+advance_expression = "linear_velocity.is_zero_approx()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dqsw6"]
 advance_mode = 2
@@ -866,15 +866,14 @@ switch_mode = 2
 advance_mode = 2
 advance_expression = "not (hit_points > 0)"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2vf6m"]
-switch_mode = 2
-advance_mode = 2
-advance_expression = "not (hit_points > 0)"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_76nxu"]
 switch_mode = 2
 advance_mode = 2
 advance_expression = "is_player_in_reach() and (hit_points > 0)"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2vf6m"]
+advance_mode = 2
+advance_expression = "not (hit_points > 0)"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_trgcn"]
 states/aim/node = SubResource("AnimationNodeAnimation_ebj8v")
@@ -887,8 +886,8 @@ states/idle/node = SubResource("AnimationNodeAnimation_1c3xr")
 states/idle/position = Vector2(355, 100)
 states/walk/node = SubResource("AnimationNodeAnimation_w3mjf")
 states/walk/position = Vector2(503, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6j2ja"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ebj8v"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ne2u5"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_dqsw6"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_ahi0g"), "idle", "aim", SubResource("AnimationNodeStateMachineTransition_r0esa"), "walk", "aim", SubResource("AnimationNodeStateMachineTransition_8io05"), "aim", "attack", SubResource("AnimationNodeStateMachineTransition_yfy57"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_e2mwc"), "attack", "death", SubResource("AnimationNodeStateMachineTransition_r11kl"), "aim", "death", SubResource("AnimationNodeStateMachineTransition_2vf6m"), "attack", "aim", SubResource("AnimationNodeStateMachineTransition_76nxu")]
-graph_offset = Vector2(15, -70)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_6j2ja"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_ebj8v"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ne2u5"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_dqsw6"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_ahi0g"), "idle", "aim", SubResource("AnimationNodeStateMachineTransition_r0esa"), "walk", "aim", SubResource("AnimationNodeStateMachineTransition_8io05"), "aim", "attack", SubResource("AnimationNodeStateMachineTransition_yfy57"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_e2mwc"), "attack", "death", SubResource("AnimationNodeStateMachineTransition_r11kl"), "attack", "aim", SubResource("AnimationNodeStateMachineTransition_76nxu"), "aim", "death", SubResource("AnimationNodeStateMachineTransition_2vf6m")]
+graph_offset = Vector2(48, -102)
 
 [sub_resource type="Animation" id="Animation_trgcn"]
 length = 0.001

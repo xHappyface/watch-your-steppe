@@ -8,7 +8,7 @@ var pierce: int = 1
 func _on_timer_timeout() -> void:
 	queue_free()
 
-func _on_static_body_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy"):
 		if not (pierce > 0):
 			return

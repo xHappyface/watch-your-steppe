@@ -4,6 +4,7 @@ class_name EnemyUtil
 enum EnemyType {
 	FOOTMAN,
 	CROSSBOWMAN,
+	GOBLIN,
 }
 
 static func move_enemy_unit(enemy: RigidBody3D, delta: float) -> void:
