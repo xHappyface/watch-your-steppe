@@ -89,7 +89,7 @@ operator = 2
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_hvgm7"]
-default_input_values = [0, Vector2(0, 0), 1, Vector2(-0.1, 0.35)]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(-0.2, 0.5)]
 op_type = 0
 operator = 2
 
@@ -148,7 +148,7 @@ void vertex() {
 
 
 // VectorOp:12
-	vec2 n_in12p1 = vec2(-0.10000, 0.35000);
+	vec2 n_in12p1 = vec2(-0.20000, 0.50000);
 	vec2 n_out12p0 = vec2(n_out11p0) * n_in12p1;
 
 
@@ -279,7 +279,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-312.203, -320.584)
+graph_offset = Vector2(-930.342, 149.93)
 modes/depth_draw = 1
 flags/shadows_disabled = true
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_swc73")

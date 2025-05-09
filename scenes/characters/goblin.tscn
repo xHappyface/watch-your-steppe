@@ -991,7 +991,7 @@ states/kamikaze/position = Vector2(450, -14)
 states/walk/node = SubResource("AnimationNodeAnimation_osho7")
 states/walk/position = Vector2(532, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_y64qe"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_0x8hd"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_3wbsg"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_2q0rr"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_24xck"), "idle", "kamikaze", SubResource("AnimationNodeStateMachineTransition_dqtp1"), "walk", "kamikaze", SubResource("AnimationNodeStateMachineTransition_lhktg"), "kamikaze", "death", SubResource("AnimationNodeStateMachineTransition_yyaat")]
-graph_offset = Vector2(116, -62)
+graph_offset = Vector2(86, -128)
 
 [sub_resource type="Animation" id="Animation_osho7"]
 length = 0.001
@@ -1388,7 +1388,7 @@ mesh = SubResource("ArrayMesh_t7di4")
 skeleton = NodePath("")
 
 [node name="arm_l" type="Node3D" parent="Mesh"]
-transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.1875, 1.15625, 0)
+transform = Transform3D(0.499998, 0.866026, 0, -0.866026, 0.499998, 0, 0, 0, 1, -0.1875, 1.15625, 0)
 
 [node name="shoulder_l" type="Node3D" parent="Mesh/arm_l"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015625, 0.03125, 0)
@@ -1429,7 +1429,7 @@ mesh = SubResource("ArrayMesh_m03bv")
 skeleton = NodePath("")
 
 [node name="arm_r" type="Node3D" parent="Mesh"]
-transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0.1875, 1.15625, 0)
+transform = Transform3D(0.499998, -0.866026, 0, 0.866026, 0.499998, 0, 0, 0, 1, 0.1875, 1.15625, 0)
 
 [node name="shoulder_r" type="Node3D" parent="Mesh/arm_r"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015625, 0.03125, 0)
