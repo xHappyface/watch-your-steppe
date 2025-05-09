@@ -25,6 +25,15 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "blue",
+"res://resources/": "green",
+"res://scenes/": "orange",
+"res://scripts/": "purple"
+}
+
 [global_group]
 
 enemy=""

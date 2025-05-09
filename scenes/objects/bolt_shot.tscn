@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://bygfq7v61frtt"]
 
-[ext_resource type="Texture2D" uid="uid://42ausu5iq33y" path="res://assets/models/crossbowman_9.png" id="1_narho"]
-[ext_resource type="Script" uid="uid://cjuxyxsnqkqsp" path="res://scripts/objects/bolt_shot.gd" id="1_ugvxh"]
+[ext_resource type="Script" uid="uid://cjuxyxsnqkqsp" path="res://scripts/objects/bolt_shot.gd" id="1_nt2rt"]
+[ext_resource type="Texture2D" uid="uid://42ausu5iq33y" path="res://assets/models/crossbowman_9.png" id="2_3b13a"]
 
 [sub_resource type="Curve3D" id="Curve3D_0xkyl"]
 _data = {
@@ -14,7 +14,7 @@ point_count = 2
 resource_name = "crossbow_texture.png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_narho")
+albedo_texture = ExtResource("2_3b13a")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_53e8x"]
@@ -84,6 +84,21 @@ shadow_mesh = SubResource("ArrayMesh_85ndc")
 [sub_resource type="SphereShape3D" id="SphereShape3D_narho"]
 radius = 0.167
 
+[sub_resource type="Animation" id="Animation_ugvxh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_narho"]
 resource_name = "fire"
 length = 0.6
@@ -101,21 +116,6 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_ugvxh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PathFollow3D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixnm5"]
 _data = {
 &"RESET": SubResource("Animation_ugvxh"),
@@ -124,7 +124,7 @@ _data = {
 
 [node name="BoltShot" type="Path3D"]
 curve = SubResource("Curve3D_0xkyl")
-script = ExtResource("1_ugvxh")
+script = ExtResource("1_nt2rt")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(-4.37105e-08, 1, 4.37105e-08, 0, -4.37114e-08, 0.999979, 0.999979, 4.37114e-08, 1.91065e-15, 0, 0, -12)

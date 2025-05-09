@@ -8,5 +8,5 @@ class_name Level
 func _on_timer_timeout() -> void:
 	for portal in portals.get_children():
 		if portal is Portal:
-			portal.spawn(EnemyUtil.EnemyType.CROSSBOWMAN)
+			portal.spawn(EnemyUtil.EnemyType.GOBLIN)
 			portal.anim_player.play(&"spawn")

@@ -1,0 +1,258 @@
+[gd_scene load_steps=14 format=4 uid="uid://cb5dgxbp3p6v5"]
+
+[ext_resource type="Script" uid="uid://in6d2m2jl0ck" path="res://scripts/objects/bomb.gd" id="1_cyuu0"]
+[ext_resource type="Texture2D" uid="uid://cmhrjnq8gqoa2" path="res://assets/models/goblin_1.png" id="1_unqwv"]
+[ext_resource type="Shader" uid="uid://jpaujdbmf3r7" path="res://resources/shaders/bomb.tres" id="3_jc6o0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rse0l"]
+resource_name = "goblin_bomb_texture.png"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_unqwv")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8ma8n"]
+_surfaces = [{
+"aabb": AABB(-0.214412, -0.279471, -0.191906, 0.426463, 0.5, 0.375),
+"format": 34359742465,
+"index_count": 240,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAQAEAAUABQADAAEAAAAGAAQABQAEAAYAAwAHAAIAAAACAAgACAACAAcABwADAAkAAwAFAAoACgAJAAMABgALAAUADAAKAAUABQALAAwACwAGAA0AAAANAAYADgAMAAsADQAPAAsACwAPAA4AEAAPAA0AEQAOAA8ADwAQABEADAAOABIAEgAOABEAEgATAAwACgAMABMADQAUABAAAAAUAA0AEwAVAAoACQAKABUAFgATABIAFgAVABMAFQAXAAkAFgAXABUACQAXABgAFgAYABcAGAAZAAkACQAZAAcAGQAYABoAFgAaABgAGwAHABkABwAbAAgAGgAcABkAGQAcABsAHQAbABwACAAbAB0AHgAcABoAHAAeAB0AHQAfAAgAAAAIAB8AIAAdAB4AHwAdACAAAAAfACEAIAAhAB8AAAAhACIAIgAhACAAAAAiABQAFAAiACMAIAAjACIAIwAQABQAHgAkACAAIwAgACQAEAAjACUAJAAlACMAJQARABAAJAAeACYAGgAmAB4AJQAkACcAJgAnACQAFgAmABoAFgAnACYAFgAoACcAJwAoACUAFgApACgAJQAoACkAKQARACUAFgASACkAEQApABIA"),
+"name": "goblin_bomb_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("NL+autsWj74QXZC7YvM5PdsWj74v+vY9qFL3PdsWj766MZU9VYeEPbYtHr4YfTs+Vp9DvdsWj74v+vY9T12JvbYtHr4YfTs+oij8vdsWj766MZU9UHAvPrYtHr5VTeQ9zSMZPtsWj74QXZC7VYeEPZSkwz0YfTs+T12JvZSkwz0YfTs+TdsxvrYtHr5VTeQ9TdsxvpSkwz1VTeQ9yY4bvtsWj74QXZC7yY5bvpSkwz0QXZC7yY5bvrYtHr4QXZC7TdsxvrYtHr73WPa9TdsxvpSkwz33WPa9yY4bvkrSYT4QXZC7oij8vUrSYT66MZU9oij8vdsWj75cPae9Vp9DvUrSYT4v+vY9NL+aukrSYT4QXZC7YvM5PUrSYT4v+vY9qFL3PUrSYT66MZU9UHAvPpSkwz1VTeQ9zSMZPkrSYT4QXZC7zSNZPrYtHr4QXZC7zSNZPpSkwz0QXZC7UHAvPrYtHr73WPa9UHAvPpSkwz33WPa9qFL3PdsWj75cPae9VYeEPbYtHr7ogkS+YvM5PdsWj77oggS+Vp9DvdsWj77oggS+T12JvbYtHr7ogkS+VYeEPZSkwz3ogkS+T12JvZSkwz3ogkS+qFL3PUrSYT5cPae9YvM5PUrSYT7oggS+Vp9DvUrSYT7oggS+oij8vUrSYT5cPae9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5ihve"]
+resource_name = "bomb"
+_surfaces = [{
+"aabb": AABB(-0.214412, -0.279471, -0.191906, 0.426463, 0.5, 0.375),
+"attribute_data": PackedByteArray("AACcPQAA0D7/sss9AACwPmlvDD7wOLw+AppYPQAAsD6lLBs+AADQPmwJeTzwOLw+aW8MPhDH4z6GWlM6AADQPv+yyz0AAPA+bAl5PBDH4z4Cmlg9AADwPraE3j6ALlU8sb/jPki6qD1q3sI+SLqoPbivxz4AYEw8AACHPgAA0D61N6Y+EMfjPsDskj4AAPA+U5atPgAA0D6BJnY+AADwPrU3pj7wOLw+l5BPPhDH4z7A7JI+AACwPlvTQD4AANA+gSZ2PgAAsD6XkE8+8Di8Pi2y2j48LLA+AADgPlCN0z6KjsA+UI3TPvaXxT4AALA+rIt7PXTGET8AAAAAdMYRP166KTyBFQA/T0BTPQAAAD9ZhoQ9SLqoPUmdADpIuqg9RGkvPEAUVTxBgmI9gJRMPNO8BT74uag9P3SJPWiWhD3U1MI9AAAAAHBfDz4AYEw8bAk9PoAuVTxjf0c+SLqoPdO8BT5Iuqg9cF8PPgBgTDwXWQU/PCygPgAACD9QjcM+io7wPlCNwz72l/U+AACgPru4Dz+gM449AAAAP6Azjj3ppgI/AAisOQU0DT8AAAAAliGhPki6qD1PQIA+SLqoPUp7hT5AFFU8SFCcPoCUTDxq3sI++LmoPRBdoj5oloQ9NbWwPgAAAAC4r8c+AGBMPNO8BT4kXVQ+WYaEPSRdVD5ZhoQ9SLqoPdO8BT5Iuqg9WYaEPSRdVD5JnQA6JF1UPkmdADpIuqg9WYaEPUi6qD2si3s9dMYxPwAAAAB0xjE/AAAAAHTGET+si3s9dMYRPwAA4D6oxgk/io7APqjGCT+KjsA+UI3TPgAA4D5QjdM+sb/jPiRdVD5q3sI+JF1UPmrewj5Iuqg9sb/jPki6qD1q3sI+JF1UPpYhoT4kXVQ+liGhPki6qD1q3sI+SLqoPZYhoT4kXVQ+T0CAPiRdVD5PQIA+SLqoPZYhoT5Iuqg9u7gPP9AZRz4AAAA/0BlHPgAAAD+gM449u7gPP6Azjj0AAAg/qMYBP4qO8D6oxgE/io7wPlCNwz4AAAg/UI3DPmN/Rz4kXVQ+07wFPiRdVD7TvAU+SLqoPWN/Rz5Iuqg907wFPiRdVD5jf0c+JF1UPmwJPT7stI0+cF8PPur4jT4/dIk9QG9mPtO8BT4kXVQ+xF8PPgb6jT6m1cI9JF2UPkRpLzyys40+SZ0AOiRdVD5ZhoQ9JF1UPkGCYj28+Y0+XropPP12Qz8AAAAAdMYxP6yLez10xjE/T0BTPRyNQz+KjsA+qMYJPwAA4D6oxgk/LbLaPpp3Gz/2l8U+HI0bP2rewj4kXVQ+sb/jPiRdVD62hN4+7LSNPrivxz7q+I0+EF2iPkBvZj5q3sI+JF1UPuKvxz4G+o0+abWwPiRdlD5Ke4U+srONPk9AgD4kXVQ+liGhPiRdVD5IUJw+vPmNPummAj/67YY+AAAAP9AZRz67uA8/0BlHPgU0DT82Goc+io7wPqjGAT8AAAg/qMYBPxdZBT+adxM/9pf1PhyNEz8="),
+"format": 34359742487,
+"index_count": 240,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMAAAAEAAYAAAAHAAUAAAAGAAgAAAAJAAcAAAAIAAoAAAAKAAkACwAMAA0ADQAOAAsADwAQABEADwASABAADwARABMADwAUABIADwATABUADwAWABQADwAVABcADwAYABYADwAXABkADwAZABgAGgAbABwAHAAdABoAHgAfACAAIAAhAB4AIgAjACQAJAAlACIAJgAnACgAKAApACYAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQABBAD4AQgBDAEQARABFAEIARgBHAEgASABJAEYASgBLAEwATABNAEoATgBPAFAAUABRAE4AUgBTAFQAVABVAFIAVgBXAFgAWABZAFYAWgBbAFwAXABdAFoAXgBfAGAAYABhAF4AYgBjAGQAZABlAGIAZgBnAGgAaABpAGYAagBrAGwAbABtAGoAbgBvAHAAcABxAG4AcgBzAHQAdAB1AHIAdgB3AHgAeAB5AHYAegB7AHwAfAB9AHoAfgB/AIAAgACBAH4AggCDAIQAhACFAIIAhgCHAIgAiACJAIYAigCLAIwAjACNAIoA"),
+"material": SubResource("StandardMaterial3D_rse0l"),
+"name": "goblin_bomb_texture.png",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 142,
+"vertex_data": PackedByteArray("NL+autsWj74QXZC7YvM5PdsWj74v+vY9qFL3PdsWj766MZU9Vp9DvdsWj74v+vY9zSMZPtsWj74QXZC7oij8vdsWj766MZU9qFL3PdsWj75cPae9yY4bvtsWj74QXZC7YvM5PdsWj77oggS+oij8vdsWj75cPae9Vp9DvdsWj77oggS+qFL3PUrSYT66MZU9UHAvPpSkwz1VTeQ9VYeEPZSkwz0YfTs+YvM5PUrSYT4v+vY9NL+aukrSYT4QXZC7qFL3PUrSYT66MZU9YvM5PUrSYT4v+vY9zSMZPkrSYT4QXZC7Vp9DvUrSYT4v+vY9qFL3PUrSYT5cPae9oij8vUrSYT66MZU9YvM5PUrSYT7oggS+yY4bvkrSYT4QXZC7Vp9DvUrSYT7oggS+oij8vUrSYT5cPae9zSMZPkrSYT4QXZC7zSNZPpSkwz0QXZC7UHAvPpSkwz1VTeQ9qFL3PUrSYT66MZU9UHAvPpSkwz33WPa9zSNZPpSkwz0QXZC7zSMZPkrSYT4QXZC7qFL3PUrSYT5cPae9VYeEPZSkwz3ogkS+UHAvPpSkwz33WPa9qFL3PUrSYT5cPae9YvM5PUrSYT7oggS+T12JvZSkwz3ogkS+VYeEPZSkwz3ogkS+YvM5PUrSYT7oggS+Vp9DvUrSYT7oggS+oij8vUrSYT5cPae9TdsxvpSkwz33WPa9T12JvZSkwz3ogkS+Vp9DvUrSYT7oggS+yY4bvkrSYT4QXZC7yY5bvpSkwz0QXZC7TdsxvpSkwz33WPa9oij8vUrSYT5cPae9TdsxvpSkwz1VTeQ9yY5bvpSkwz0QXZC7yY4bvkrSYT4QXZC7oij8vUrSYT66MZU9T12JvZSkwz0YfTs+TdsxvpSkwz1VTeQ9oij8vUrSYT66MZU9Vp9DvUrSYT4v+vY9VYeEPZSkwz0YfTs+T12JvZSkwz0YfTs+Vp9DvUrSYT4v+vY9YvM5PUrSYT4v+vY9T12JvbYtHr7ogkS+VYeEPbYtHr7ogkS+VYeEPZSkwz3ogkS+T12JvZSkwz3ogkS+VYeEPbYtHr7ogkS+UHAvPrYtHr73WPa9UHAvPpSkwz33WPa9VYeEPZSkwz3ogkS+UHAvPrYtHr73WPa9zSNZPrYtHr4QXZC7zSNZPpSkwz0QXZC7UHAvPpSkwz33WPa9zSNZPrYtHr4QXZC7UHAvPrYtHr5VTeQ9UHAvPpSkwz1VTeQ9zSNZPpSkwz0QXZC7UHAvPrYtHr5VTeQ9VYeEPbYtHr4YfTs+VYeEPZSkwz0YfTs+UHAvPpSkwz1VTeQ9VYeEPbYtHr4YfTs+T12JvbYtHr4YfTs+T12JvZSkwz0YfTs+VYeEPZSkwz0YfTs+T12JvbYtHr4YfTs+TdsxvrYtHr5VTeQ9TdsxvpSkwz1VTeQ9T12JvZSkwz0YfTs+TdsxvrYtHr5VTeQ9yY5bvrYtHr4QXZC7yY5bvpSkwz0QXZC7TdsxvpSkwz1VTeQ9yY5bvrYtHr4QXZC7TdsxvrYtHr73WPa9TdsxvpSkwz33WPa9yY5bvpSkwz0QXZC7TdsxvrYtHr73WPa9T12JvbYtHr7ogkS+T12JvZSkwz3ogkS+TdsxvpSkwz33WPa9T12JvbYtHr7ogkS+TdsxvrYtHr73WPa9oij8vdsWj75cPae9Vp9DvdsWj77oggS+VYeEPbYtHr7ogkS+T12JvbYtHr7ogkS+Vp9DvdsWj77oggS+YvM5PdsWj77oggS+qFL3PdsWj75cPae9UHAvPrYtHr73WPa9VYeEPbYtHr7ogkS+YvM5PdsWj77oggS+zSMZPtsWj74QXZC7zSNZPrYtHr4QXZC7UHAvPrYtHr73WPa9qFL3PdsWj75cPae9UHAvPrYtHr5VTeQ9zSNZPrYtHr4QXZC7zSMZPtsWj74QXZC7qFL3PdsWj766MZU9VYeEPbYtHr4YfTs+UHAvPrYtHr5VTeQ9qFL3PdsWj766MZU9YvM5PdsWj74v+vY9T12JvbYtHr4YfTs+VYeEPbYtHr4YfTs+YvM5PdsWj74v+vY9Vp9DvdsWj74v+vY9oij8vdsWj766MZU9TdsxvrYtHr5VTeQ9T12JvbYtHr4YfTs+Vp9DvdsWj74v+vY9yY4bvtsWj74QXZC7yY5bvrYtHr4QXZC7TdsxvrYtHr5VTeQ9oij8vdsWj766MZU9TdsxvrYtHr73WPa9yY5bvrYtHr4QXZC7yY4bvtsWj74QXZC7oij8vdsWj75cPae9/38AAP///7//fwAA////v/9/AAD///+//38AAP7//7//fwAA////v/9/AAD+//+//38AAP7//7//fwAA////v/9/AAD+//+//38AAP///7//fwAA////v8il9aH+/7bZyKX1of//ttnIpfWh/v+22cil9aH+/7fZ/3///////7//f///////v/9///////+//3///////7//f////v//v/9////+//+//3////7//7//f////v//v/9///////+//3///////7//f///////v6XEOKP+/1rvpcQ4o///o5ClxDij/v9a76XEOKP+/1rvbd3cugAAWu9t3dy6AABa723d3LoAAFrvbd3cugAAWu/+3tLZAAC22f7e0tkAALbZ/t7S2QAAttn+3tLZAAC22VTV///EIpbLVNX//8QilstU1f//xCKWy1TV///EIpbL9iE12m8z/7/2ITXabjP/v/YhNdpvM/+/9iE12m8z/785I1i7tl7/vzkjWLu2Xv+/OSNYu7Ze/785I1i7tl7/v9w6kKJIof+/3DqQokih/7/cOpCiSKH/v9w6kKJIof+/01n/oJDM/7/TWf+gkMz/v9NZ/6CQzP+/01n/oJDM/7//f6qq0ehh0f9/qqrR6GHR/3+qqtHoYdH/f6qq0ehh0f////8AAP+//////wAA/7//////AAD/v/////8AAP+///+QzAAAttn//5DMAAC22f//kMwAALbZ//+QzAAAttn//0ihAABa7///SKEAAFrv//9IoQAAWu///0ihAABa77be/3///1rvtt7/f///Wu+23v9///9a77be/3///1rvbrP/f///ttlus/9///+22W6z/3///7bZbrP/f///ttn/f/9/////v/9//3////+//3//f////7//f/9/////v5BM/3+QzP+/kEz/f5DM/7+QTP9/kMz/v5BM/3+QzP+/SCH/f0ih/79IIf9/SKH/v0gh/39Iof+/SCH/f0ih/78AAEihtl7/vwAASKG2Xv+/AABIobZe/78AAEihtl7/vwAAkMxuM/+/AACQzG4z/78AAJDMbjP/vwAAkMxuM/+/ACEsJm4z/78AISwmbjP/vwAhLCZuM/+/ACEsJm4z/79U1QAAxCJotFTVAADEImi0VNUAAMQiaLRU1QAAxCJotAjeySUAAEemCN7JJQAAR6YI3sklAABHpgjeySUAAEemxdymRAAAWu/F3KZEAACjkMXcpkQAAFrvxdymRAAAWu8ixW5d/v9a7yLFbl3//1rvIsVuXf7/Wu8ixW5d/v9a7yum/17+/7bZK6b/Xv//R6Yrpv9e/v+22Sum/17+/7bZ/39UVdHonK7/f1RV0eicrv9/VFXR6Jyu/39UVdHonK42WglekMz/vzZaCV6QzP+/NloJXpDM/782WglekMz+v1k7xlxIof+/WTvGXEih/79ZO8ZcSKH/v1k7xlxIof+/kSIiRbZe/7+RIiJFtl7/v5EiIkW2Xv+/kSIiRbZe/78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8ma8n")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_unqwv"]
+radius = 0.225
+height = 0.65
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_unqwv"]
+radius = 2.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jc6o0"]
+render_priority = 0
+shader = ExtResource("3_jc6o0")
+shader_parameter/VanishStep = 0.0
+shader_parameter/ExplosionStep = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_uno4j"]
+material = SubResource("ShaderMaterial_jc6o0")
+radial_segments = 32
+rings = 16
+
+[sub_resource type="Animation" id="Animation_cyuu0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion/MeshInstance3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion/MeshInstance3D:mesh:material:shader_parameter/VanishStep")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion/MeshInstance3D:mesh:material:shader_parameter/ExplosionStep")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_unqwv"]
+resource_name = "explode"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1), Vector3(2, 2, 2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"explode"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion/MeshInstance3D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.5, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(2.5, 2.5, 2.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion/MeshInstance3D:mesh:material:shader_parameter/ExplosionStep")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.8, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Explosion/MeshInstance3D:mesh:material:shader_parameter/VanishStep")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.8, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MeshInstance3D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyuu0"]
+_data = {
+&"RESET": SubResource("Animation_cyuu0"),
+&"explode": SubResource("Animation_unqwv")
+}
+
+[node name="Bomb" type="StaticBody3D"]
+collision_layer = 512
+collision_mask = 0
+script = ExtResource("1_cyuu0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0351873)
+mesh = SubResource("ArrayMesh_5ihve")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_unqwv")
+
+[node name="Explosion" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 514
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Explosion"]
+shape = SubResource("CylinderShape3D_unqwv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Explosion"]
+transform = Transform3D(3.82137e-16, 8.74228e-09, 0.2, 0.2, -8.74228e-09, 0, 8.74228e-09, 0.2, -8.74228e-09, 0, 0, 0)
+mesh = SubResource("SphereMesh_uno4j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_cyuu0")
+}
+autoplay = "explode"

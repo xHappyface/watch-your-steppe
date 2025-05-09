@@ -1,20 +1,20 @@
 [gd_scene load_steps=114 format=4 uid="uid://upvkn3ktuowp"]
 
-[ext_resource type="Texture2D" uid="uid://qn5kicgpcxyh" path="res://assets/models/crossbowman_6.png" id="1_cbml7"]
-[ext_resource type="Script" uid="uid://bh8sl482m3b4f" path="res://scripts/characters/crossbowman.gd" id="1_in1vj"]
-[ext_resource type="Texture2D" uid="uid://btf07o8k57s5x" path="res://assets/models/crossbowman_5.png" id="2_in1vj"]
-[ext_resource type="Texture2D" uid="uid://b7q8ds6xicq65" path="res://assets/models/crossbowman_8.png" id="3_ni0hu"]
-[ext_resource type="Texture2D" uid="uid://cci1gjynx5uo7" path="res://assets/models/crossbowman_7.png" id="4_fbr7d"]
-[ext_resource type="Texture2D" uid="uid://c81ndcwr0dq8n" path="res://assets/models/crossbowman_3.png" id="5_jy2v5"]
-[ext_resource type="Texture2D" uid="uid://ccs0ofaru35ry" path="res://assets/models/crossbowman_4.png" id="6_32s1m"]
-[ext_resource type="Texture2D" uid="uid://bx2aq2erh71u4" path="res://assets/models/crossbowman_11.png" id="7_4n1b6"]
-[ext_resource type="Texture2D" uid="uid://b5pxc18iityhd" path="res://assets/models/crossbowman_2.png" id="8_0lv0o"]
-[ext_resource type="Texture2D" uid="uid://42ausu5iq33y" path="res://assets/models/crossbowman_9.png" id="9_7ocdy"]
-[ext_resource type="Texture2D" uid="uid://d3dc1a1c1bodc" path="res://assets/models/crossbowman_12.png" id="10_fl25x"]
-[ext_resource type="Script" path="res://scripts/states/state_manager.gd" id="12_ni0hu"]
-[ext_resource type="Script" uid="uid://cqmovne7b3dwa" path="res://scripts/states/enemies/enemy_state_normal.gd" id="13_fbr7d"]
-[ext_resource type="Script" uid="uid://ehppxigayabl" path="res://scripts/states/enemies/enemy_state_attack.gd" id="14_32s1m"]
-[ext_resource type="Script" uid="uid://t0c6cwat62o6" path="res://scripts/states/player/player_state_dead.gd" id="14_jy2v5"]
+[ext_resource type="Script" uid="uid://bh8sl482m3b4f" path="res://scripts/characters/crossbowman.gd" id="1_fn1qo"]
+[ext_resource type="Texture2D" uid="uid://qn5kicgpcxyh" path="res://assets/models/crossbowman_6.png" id="2_xqleo"]
+[ext_resource type="Texture2D" uid="uid://btf07o8k57s5x" path="res://assets/models/crossbowman_5.png" id="3_mq62x"]
+[ext_resource type="Texture2D" uid="uid://b7q8ds6xicq65" path="res://assets/models/crossbowman_8.png" id="4_tq3yn"]
+[ext_resource type="Texture2D" uid="uid://cci1gjynx5uo7" path="res://assets/models/crossbowman_7.png" id="5_gcmvj"]
+[ext_resource type="Texture2D" uid="uid://c81ndcwr0dq8n" path="res://assets/models/crossbowman_3.png" id="6_shssx"]
+[ext_resource type="Texture2D" uid="uid://ccs0ofaru35ry" path="res://assets/models/crossbowman_4.png" id="7_geaom"]
+[ext_resource type="Texture2D" uid="uid://bx2aq2erh71u4" path="res://assets/models/crossbowman_11.png" id="8_imbwe"]
+[ext_resource type="Texture2D" uid="uid://b5pxc18iityhd" path="res://assets/models/crossbowman_2.png" id="9_o0mhv"]
+[ext_resource type="Texture2D" uid="uid://42ausu5iq33y" path="res://assets/models/crossbowman_9.png" id="10_lioj7"]
+[ext_resource type="Texture2D" uid="uid://d3dc1a1c1bodc" path="res://assets/models/crossbowman_12.png" id="11_wsewd"]
+[ext_resource type="Script" path="res://scripts/states/state_manager.gd" id="12_rsf34"]
+[ext_resource type="Script" uid="uid://cqmovne7b3dwa" path="res://scripts/states/enemies/enemy_state_normal.gd" id="13_4r80t"]
+[ext_resource type="Script" uid="uid://ehppxigayabl" path="res://scripts/states/enemies/enemy_state_attack.gd" id="14_ihith"]
+[ext_resource type="Script" uid="uid://t0c6cwat62o6" path="res://scripts/states/player/player_state_dead.gd" id="15_rcq2a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nddvj"]
 resource_name = "LetR.png"
@@ -22,7 +22,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_cbml7")
+albedo_texture = ExtResource("2_xqleo")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xrhx3"]
@@ -127,7 +127,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_in1vj")
+albedo_texture = ExtResource("3_mq62x")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_if0ba"]
@@ -232,7 +232,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_ni0hu")
+albedo_texture = ExtResource("4_tq3yn")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bhdta"]
@@ -337,7 +337,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_fbr7d")
+albedo_texture = ExtResource("5_gcmvj")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k2ypo"]
@@ -442,7 +442,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_jy2v5")
+albedo_texture = ExtResource("6_shssx")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sivlf"]
@@ -483,7 +483,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_32s1m")
+albedo_texture = ExtResource("7_geaom")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_488ru"]
@@ -524,7 +524,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("7_4n1b6")
+albedo_texture = ExtResource("8_imbwe")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6alpu"]
@@ -565,7 +565,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_0lv0o")
+albedo_texture = ExtResource("9_o0mhv")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8xy1w"]
@@ -604,7 +604,7 @@ shadow_mesh = SubResource("ArrayMesh_8xy1w")
 resource_name = "crossbow_texture.png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("9_7ocdy")
+albedo_texture = ExtResource("10_lioj7")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pue76"]
@@ -741,7 +741,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("10_fl25x")
+albedo_texture = ExtResource("11_wsewd")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_orqfe"]
@@ -851,11 +851,11 @@ states/death/position = Vector2(457, 217)
 transitions = ["Start", "chase", SubResource("AnimationNodeStateMachineTransition_jy2v5"), "chase", "attack", SubResource("AnimationNodeStateMachineTransition_32s1m"), "attack", "chase", SubResource("AnimationNodeStateMachineTransition_4n1b6"), "chase", "death", SubResource("AnimationNodeStateMachineTransition_0lv0o"), "attack", "death", SubResource("AnimationNodeStateMachineTransition_7ocdy")]
 
 [sub_resource type="Resource" id="Resource_fbr7d"]
-script = ExtResource("13_fbr7d")
+script = ExtResource("13_4r80t")
 metadata/_custom_type_script = "uid://cqmovne7b3dwa"
 
 [sub_resource type="Resource" id="Resource_4n1b6"]
-script = ExtResource("14_32s1m")
+script = ExtResource("14_ihith")
 metadata/_custom_type_script = "uid://ehppxigayabl"
 
 [sub_resource type="Animation" id="Animation_fbr7d"]
@@ -878,7 +878,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Resource" id="Resource_jy2v5"]
-script = ExtResource("13_fbr7d")
+script = ExtResource("13_4r80t")
 metadata/_custom_type_script = "uid://cqmovne7b3dwa"
 
 [sub_resource type="Animation" id="Animation_ni0hu"]
@@ -901,7 +901,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Resource" id="Resource_32s1m"]
-script = ExtResource("14_jy2v5")
+script = ExtResource("15_rcq2a")
 metadata/_custom_type_script = "uid://t0c6cwat62o6"
 
 [sub_resource type="Animation" id="Animation_4n1b6"]
@@ -1008,7 +1008,7 @@ states/idle/position = Vector2(352, 100)
 states/walk/node = SubResource("AnimationNodeAnimation_0lv0o")
 states/walk/position = Vector2(524, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fl25x"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_qqv7c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_828ck"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_siulk"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_r62n0"), "idle", "aim", SubResource("AnimationNodeStateMachineTransition_sqbwd"), "walk", "aim", SubResource("AnimationNodeStateMachineTransition_uslkx"), "aim", "death", SubResource("AnimationNodeStateMachineTransition_uv176"), "aim", "fire", SubResource("AnimationNodeStateMachineTransition_q5733"), "fire", "aim", SubResource("AnimationNodeStateMachineTransition_n4xdt"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_21ifw"), "fire", "death", SubResource("AnimationNodeStateMachineTransition_xmloo")]
-graph_offset = Vector2(115, -77)
+graph_offset = Vector2(-17, -143)
 
 [sub_resource type="Animation" id="Animation_32s1m"]
 length = 0.001
@@ -1095,73 +1095,6 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jy2v5"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Mesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0lv0o"]
-resource_name = "walk"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Mesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7ocdy"]
-resource_name = "death"
-length = 1.4
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Mesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -2, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_fl25x"]
@@ -1266,6 +1199,37 @@ tracks/7/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_7ocdy"]
+resource_name = "death"
+length = 1.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -2, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_qqv7c"]
 resource_name = "fire"
 length = 0.4
@@ -1302,6 +1266,42 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jy2v5"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0lv0o"]
+resource_name = "walk"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4n1b6"]
 _data = {
 &"RESET": SubResource("Animation_32s1m"),
@@ -1319,7 +1319,7 @@ axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 15.0
-script = ExtResource("1_in1vj")
+script = ExtResource("1_fn1qo")
 
 [node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0, 0)
@@ -1480,7 +1480,7 @@ callback_mode_process = 0
 tree_root = SubResource("AnimationNodeStateMachine_ni0hu")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("States")
-script = ExtResource("12_ni0hu")
+script = ExtResource("12_rsf34")
 current_state = SubResource("Resource_fbr7d")
 
 [node name="States" type="AnimationPlayer" parent="StateManager"]

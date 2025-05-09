@@ -1,20 +1,20 @@
 [gd_scene load_steps=107 format=4 uid="uid://gbbjt7p8820c"]
 
-[ext_resource type="Script" uid="uid://cd83ktxcu8te0" path="res://scripts/characters/footman.gd" id="1_2tnhf"]
-[ext_resource type="Texture2D" uid="uid://drdexakq2fgfq" path="res://assets/models/footman_7.png" id="2_8io05"]
-[ext_resource type="Texture2D" uid="uid://bfdmiqgoml1n4" path="res://assets/models/footman_6.png" id="3_yfy57"]
-[ext_resource type="Script" path="res://scripts/states/state_manager.gd" id="3_yqmta"]
-[ext_resource type="Texture2D" uid="uid://3minvg8ysu5t" path="res://assets/models/footman_9.png" id="4_e2mwc"]
-[ext_resource type="Script" uid="uid://cqmovne7b3dwa" path="res://scripts/states/enemies/enemy_state_normal.gd" id="4_ufmc2"]
-[ext_resource type="Script" uid="uid://ehppxigayabl" path="res://scripts/states/enemies/enemy_state_attack.gd" id="5_4x1wb"]
-[ext_resource type="Texture2D" uid="uid://dedjcg64djfa4" path="res://assets/models/footman_8.png" id="5_klgno"]
-[ext_resource type="Texture2D" uid="uid://dst3jpj7uoqvc" path="res://assets/models/footman_4.png" id="6_r11kl"]
-[ext_resource type="Script" uid="uid://cak0r3pxie6up" path="res://scripts/states/enemies/enemy_state_dead.gd" id="6_trgcn"]
-[ext_resource type="Texture2D" uid="uid://txgchm8dmcc2" path="res://assets/models/footman_5.png" id="7_2vf6m"]
-[ext_resource type="Texture2D" uid="uid://4wsryet2rriu" path="res://assets/models/footman_2.png" id="8_76nxu"]
-[ext_resource type="Texture2D" uid="uid://ck152xvxwmspd" path="res://assets/models/footman_3.png" id="9_q7x1w"]
-[ext_resource type="Texture2D" uid="uid://mbajphexsl6s" path="res://assets/models/footman_1.png" id="10_g827a"]
-[ext_resource type="Texture2D" uid="uid://jsjfoe13ml3k" path="res://assets/models/footman_0.png" id="11_xi5f7"]
+[ext_resource type="Script" uid="uid://cd83ktxcu8te0" path="res://scripts/characters/footman.gd" id="1_gc3ey"]
+[ext_resource type="Texture2D" uid="uid://drdexakq2fgfq" path="res://assets/models/footman_7.png" id="2_mrh4e"]
+[ext_resource type="Texture2D" uid="uid://bfdmiqgoml1n4" path="res://assets/models/footman_6.png" id="3_d8to3"]
+[ext_resource type="Texture2D" uid="uid://3minvg8ysu5t" path="res://assets/models/footman_9.png" id="4_vb0bw"]
+[ext_resource type="Texture2D" uid="uid://dedjcg64djfa4" path="res://assets/models/footman_8.png" id="5_611o7"]
+[ext_resource type="Texture2D" uid="uid://dst3jpj7uoqvc" path="res://assets/models/footman_4.png" id="6_rdoxf"]
+[ext_resource type="Texture2D" uid="uid://txgchm8dmcc2" path="res://assets/models/footman_5.png" id="7_n0vf2"]
+[ext_resource type="Texture2D" uid="uid://4wsryet2rriu" path="res://assets/models/footman_2.png" id="8_3oqp2"]
+[ext_resource type="Texture2D" uid="uid://ck152xvxwmspd" path="res://assets/models/footman_3.png" id="9_gy0dj"]
+[ext_resource type="Texture2D" uid="uid://mbajphexsl6s" path="res://assets/models/footman_1.png" id="10_bty2f"]
+[ext_resource type="Texture2D" uid="uid://jsjfoe13ml3k" path="res://assets/models/footman_0.png" id="11_kdo2j"]
+[ext_resource type="Script" path="res://scripts/states/state_manager.gd" id="12_y3d0j"]
+[ext_resource type="Script" uid="uid://cqmovne7b3dwa" path="res://scripts/states/enemies/enemy_state_normal.gd" id="13_6xe6d"]
+[ext_resource type="Script" uid="uid://ehppxigayabl" path="res://scripts/states/enemies/enemy_state_attack.gd" id="14_drm81"]
+[ext_resource type="Script" uid="uid://cak0r3pxie6up" path="res://scripts/states/enemies/enemy_state_dead.gd" id="15_oc40v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j2ql"]
 resource_name = "LetR.png"
@@ -22,7 +22,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_8io05")
+albedo_texture = ExtResource("2_mrh4e")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_51q8n"]
@@ -127,7 +127,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_yfy57")
+albedo_texture = ExtResource("3_d8to3")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6mdc5"]
@@ -232,7 +232,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_e2mwc")
+albedo_texture = ExtResource("4_vb0bw")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_btm2r"]
@@ -337,7 +337,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_klgno")
+albedo_texture = ExtResource("5_611o7")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_awlo6"]
@@ -442,7 +442,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_r11kl")
+albedo_texture = ExtResource("6_rdoxf")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rqv0p"]
@@ -483,7 +483,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("7_2vf6m")
+albedo_texture = ExtResource("7_n0vf2")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_elifg"]
@@ -524,7 +524,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_76nxu")
+albedo_texture = ExtResource("8_3oqp2")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ifg1l"]
@@ -565,7 +565,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("9_q7x1w")
+albedo_texture = ExtResource("9_gy0dj")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kffft"]
@@ -606,7 +606,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("10_g827a")
+albedo_texture = ExtResource("10_bty2f")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sgi5j"]
@@ -647,7 +647,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("11_xi5f7")
+albedo_texture = ExtResource("11_kdo2j")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5qa8t"]
@@ -730,11 +730,11 @@ transitions = ["Start", "chase", SubResource("AnimationNodeStateMachineTransitio
 graph_offset = Vector2(1, 16)
 
 [sub_resource type="Resource" id="Resource_4x1wb"]
-script = ExtResource("4_ufmc2")
+script = ExtResource("13_6xe6d")
 metadata/_custom_type_script = "uid://cqmovne7b3dwa"
 
 [sub_resource type="Resource" id="Resource_trgcn"]
-script = ExtResource("5_4x1wb")
+script = ExtResource("14_drm81")
 metadata/_custom_type_script = "uid://ehppxigayabl"
 
 [sub_resource type="Animation" id="Animation_ufmc2"]
@@ -757,7 +757,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Resource" id="Resource_ufmc2"]
-script = ExtResource("4_ufmc2")
+script = ExtResource("13_6xe6d")
 metadata/_custom_type_script = "uid://cqmovne7b3dwa"
 
 [sub_resource type="Animation" id="Animation_4x1wb"]
@@ -780,7 +780,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Resource" id="Resource_1c3xr"]
-script = ExtResource("6_trgcn")
+script = ExtResource("15_oc40v")
 metadata/_custom_type_script = "uid://cak0r3pxie6up"
 
 [sub_resource type="Animation" id="Animation_w3mjf"]
@@ -1127,7 +1127,7 @@ axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 20.0
-script = ExtResource("1_2tnhf")
+script = ExtResource("1_gc3ey")
 
 [node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -1269,7 +1269,7 @@ callback_mode_process = 0
 tree_root = SubResource("AnimationNodeStateMachine_yqmta")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("States")
-script = ExtResource("3_yqmta")
+script = ExtResource("12_y3d0j")
 current_state = SubResource("Resource_4x1wb")
 
 [node name="States" type="AnimationPlayer" parent="StateManager"]

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@onready var arrow_shot_scene: PackedScene = preload("res://scenes/arrow_shot.tscn")
+@onready var arrow_shot_scene: PackedScene = preload("res://scenes/objects/arrow_shot.tscn")
 
 const BASE_SPEED: float = 4.5
 

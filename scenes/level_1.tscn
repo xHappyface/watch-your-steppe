@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5d625kdlmaj8"]
+[gd_scene load_steps=10 format=3 uid="uid://b5d625kdlmaj8"]
 
-[ext_resource type="PackedScene" uid="uid://cs7vkhn5vuhey" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://cs7vkhn5vuhey" path="res://scenes/characters/player.tscn" id="1_014kd"]
 [ext_resource type="Script" uid="uid://shye31ji17p3" path="res://scripts/level.gd" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://bo01t0p1nn0it" path="res://scenes/portal.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://cb5dgxbp3p6v5" path="res://scenes/objects/bomb.tscn" id="4_4nkto"]
+[ext_resource type="PackedScene" uid="uid://bo01t0p1nn0it" path="res://scenes/objects/portal.tscn" id="4_5xbjy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gkh53"]
 
@@ -49,6 +50,8 @@ shape = SubResource("BoxShape3D_5xbjy")
 
 [node name="Player" parent="Ground/NavigationRegion3D" instance=ExtResource("1_014kd")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, 0, 0)
+speed = 4.5
+dash_cooldown = 0.0
 
 [node name="Portals" type="Node" parent="."]
 
@@ -62,5 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
 process_callback = 0
 one_shot = true
 autostart = true
+
+[node name="Bomb" parent="." instance=ExtResource("4_4nkto")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

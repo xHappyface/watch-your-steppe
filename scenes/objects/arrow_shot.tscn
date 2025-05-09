@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://bkje5t8owohgq"]
 
-[ext_resource type="Script" uid="uid://chc4vbls0mk36" path="res://scripts/objects/arrow_shot.gd" id="1_wcv4g"]
-[ext_resource type="Texture2D" uid="uid://cbs1nnn8owv6i" path="res://assets/models/nomolun_arrow_texture.png" id="2_ij5sx"]
+[ext_resource type="Script" uid="uid://chc4vbls0mk36" path="res://scripts/objects/arrow_shot.gd" id="1_ki3u7"]
+[ext_resource type="Texture2D" uid="uid://cbs1nnn8owv6i" path="res://assets/models/nomolun_arrow_texture.png" id="2_7w6uu"]
 
 [sub_resource type="Curve3D" id="Curve3D_dqkch"]
 resource_local_to_scene = true
@@ -17,7 +17,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_ij5sx")
+albedo_texture = ExtResource("2_7w6uu")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -193,7 +193,7 @@ _data = {
 
 [node name="ArrowShot" type="Path3D"]
 curve = SubResource("Curve3D_dqkch")
-script = ExtResource("1_wcv4g")
+script = ExtResource("1_ki3u7")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(-4.37097e-08, 1, -4.37097e-08, 0, -4.37114e-08, -0.999962, -0.999962, -4.37114e-08, 1.91061e-15, 0, 1.25, 0)

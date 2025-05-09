@@ -1,7 +1,7 @@
 extends RigidBody3D
 class_name Crossbowman
 
-@onready var bolt_shot_scene: PackedScene = preload("res://scenes/bolt_shot.tscn")
+@onready var bolt_shot_scene: PackedScene = preload("res://scenes/objects/bolt_shot.tscn")
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var reach: Area3D = $Reach
